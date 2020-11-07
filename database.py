@@ -9,5 +9,12 @@ connection = psycopg2.connect(
 
 cursor = connection.cursor()
 
+print("connection open")
+
 cursor.execute("create table if not exists books (id serial PRIMARY KEY, title varchar);")
+
+print("connection executed")
+
 connection.commit()
+
+print("connection ended")
